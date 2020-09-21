@@ -4,17 +4,12 @@ import (
     "github.com/aws/aws-sdk-go/aws"
     "github.com/aws/aws-sdk-go/aws/session"
     "github.com/aws/aws-sdk-go/service/dynamodb"
-	//"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbattribute"
 	"github.com/aws/aws-lambda-go/lambda"
 
     "fmt"
-    // "os"
-    // "io/ioutil"
-    // "log"
     "net/http"
 	"encoding/json"
 )
-// snippet-end:[dynamodb.go.create_item.struct]
 
 type Response struct {
 	Success   string `json:"success"`
@@ -25,7 +20,6 @@ type Response struct {
 	Rates     Rates  `json:"rates"`
 }
 type Rates struct {
-	// EntryNo int            `json:"entry_number"`
 	ABC  ABC  `json:"ABC"`
 	AGI  AGI  `json:"AGI"`
 	ETH  ETH  `json:"ETH"`
@@ -89,8 +83,7 @@ func Handle(item Response)(string,error) {
 
     svc := dynamodb.New(sess)
 	
-	//code from previous file
-
+	
 
 response, err := http.Get("http://api.coinlayer.com/live?access_key=10027564b8637892ec3cf5dccaa1c812&target=INR&expand=1")
 	if err != nil {
