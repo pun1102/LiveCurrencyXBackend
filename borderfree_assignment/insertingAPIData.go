@@ -6,14 +6,9 @@ import (
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
-	// "io/ioutil"
-	// "log"
 	"net/http"
-	// "os"
+	
 )
-
-// snippet-end:[dynamodb.go.create_item.struct]
-// A Response struct to map the Entire Response
 type Response struct {
 	Success   string `json:"success"`
 	Terms     string `json:"terms"`
@@ -23,7 +18,6 @@ type Response struct {
 	Rates     Rates  `json:"rates"`
 }
 type Rates struct {
-	// EntryNo int            `json:"entry_number"`
 	ABC  ABC  `json:"ABC"`
 	AGI  AGI  `json:"AGI"`
 	ETH  ETH  `json:"ETH"`
